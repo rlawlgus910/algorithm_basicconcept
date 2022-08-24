@@ -31,29 +31,33 @@ def check(arr):
     visited = [[0] * N for _ in range(N)]
     for i in range(N):
         for j in range(N):
+            ni = i
+            nj = j
             cnt = 0
-            while 0 <= i < N and 0 <= j < N and arr[i][j] == 'o' and visited[i][j] == 0:
-                visited[i][j] = 1
+            while 0 <= ni < N and 0 <= nj < N and arr[ni][nj] == 'o' and visited[ni][nj] == 0:
+                visited[ni][nj] = 1
                 cnt += 1
                 if cnt == 5:
                     ans = 'YES'
                     return
-                i += 1
-                j += 1
+                ni += 1
+                nj += 1
 
     # 대각선 좌축 방향
     visited = [[0] * N for _ in range(N)]
     for i in range(N):
         for j in range(N):
             cnt = 0
-            while 0 <= i < N and 0 <= j < N and arr[i][j] == 'o' and visited[i][j] == 0:
+            ni = i
+            nj = j
+            while 0 <= ni < N and 0 <= nj < N and arr[ni][nj] == 'o' and visited[ni][nj] == 0:
                 visited[i][j] = 1
                 cnt += 1
                 if cnt == 5:
                     ans = 'YES'
                     return
-                i += 1
-                j -= 1
+                ni += 1
+                nj -= 1
 
 
 

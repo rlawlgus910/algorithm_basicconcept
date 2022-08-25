@@ -1,5 +1,5 @@
-import sys
-sys.stdin = open('자기방으로돌아가기_input.txt')
+# import sys
+# sys.stdin = open('자기방으로돌아가기_input.txt')
 
 T = int(input())
 for tc in range(1, T + 1):
@@ -19,8 +19,12 @@ for tc in range(1, T + 1):
         else:
             goal = b // 2 + 1
 
-        for room in range(start, goal + 1):
-            rooms[room].append(i)
+        if start < goal:
+            for room in range(start, goal + 1):
+                rooms[room].append(i)
+        else:
+            for room in range(goal, start + 1):
+                rooms[room].append(i)
 
     ans = 0
     for i in range(201):

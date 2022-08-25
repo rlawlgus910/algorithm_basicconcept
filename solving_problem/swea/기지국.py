@@ -20,7 +20,7 @@ for tc in range(1, T + 1):
                 for k in range(4):
                     ni = i + da[k][0]
                     nj = j + da[k][1]
-                    if 0 <= ni < N and 0 <= nj < N:
+                    if 0 <= ni < N and 0 <= nj < N and arr[ni][nj] == 'H':
                         arr[ni][nj] = 'X'
 
             # B기지국
@@ -28,7 +28,7 @@ for tc in range(1, T + 1):
                 for k in range(8):
                     ni = i + db[k][0]
                     nj = j + db[k][1]
-                    if 0 <= ni < N and 0 <= nj < N:
+                    if 0 <= ni < N and 0 <= nj < N and arr[ni][nj] == 'H':
                         arr[ni][nj] = 'X'
 
             # C기지국
@@ -36,13 +36,13 @@ for tc in range(1, T + 1):
                 for k in range(12):
                     ni = i + dc[k][0]
                     nj = j + dc[k][1]
-                    if 0 <= ni < N and 0 <= nj < N:
+                    if 0 <= ni < N and 0 <= nj < N and arr[ni][nj] == 'H':
                         arr[ni][nj] = 'X'
 
 
 
     ans = 0
     for i in range(N):
-        print(arr[i])
+        # print(arr[i])
         ans += arr[i].count('H')
     print(f'#{tc} {ans}')
